@@ -24,8 +24,8 @@ public class MainActivity extends Activity {
         ButterKnife.inject(this);
 
         new MovieAdapter().create().getMovies("batman")
-                .observeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(movies -> list.setAdapter(new MovieListAdapter(MainActivity.this, movies)));
     }
 
